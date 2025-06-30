@@ -12,6 +12,8 @@ const Section: FC<
     </section>
   );
 });
-
+// the original component name can be lost in the React DevTools.
+// By explicitly setting the displayName,
+//you ensure that the component appears with a meaningful name in debugging tools.
 Section.displayName = 'Section';
 export default Section;

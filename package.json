@@ -1,7 +1,10 @@
 {
-  "name": "react-resume-template",
+  "name": "jason-resume",
   "version": "2.0.0",
   "private": true,
+  "publicRuntimeConfig": {
+    "siteUrl": "https://tangzhilinnz.github.io/"
+  },
   "scripts": {
     "build": "yarn compile && yarn next build",
     "clean": "rm -rf build-tsc .next",
