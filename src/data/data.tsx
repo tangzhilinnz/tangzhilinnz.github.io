@@ -12,11 +12,11 @@ import GithubIcon from '../components/Icon/GithubIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import heroImage from '../images/header-background.jpg';
 import profilepic from '../images/profilepic.jpg';
-import testimonialImage from '../images/testimonial.webp';
+import lighthouseProjectImage from '../images/projects/dx11_lighthouse.gif';
 // Project images
 import mazeProjectImage from '../images/projects/maze_solver.gif';
-import lighthouseProjectImage from '../images/projects/dx11_lighthouse.gif';
 import openglProjectImage from '../images/projects/opengl_oit.jpg';
+import testimonialImage from '../images/testimonial.webp';
 import {
   About,
   ContactSection,
@@ -111,11 +111,11 @@ export const aboutData: About = {
     </>
   ),
   aboutItems: [
-    { label: 'Location', text: 'Chicago, IL', Icon: MapIcon },
+    {label: 'Location', text: 'Chicago, IL', Icon: MapIcon},
     // {label: 'Age', text: '29', Icon: CalendarIcon},
-    { label: 'Nationality', text: 'Chinese', Icon: FlagIcon },
-    { label: 'Interests', text: '🥏Frisbee, 🥾Hiking', Icon: SparklesIcon },
-    { label: 'Study', text: 'DePaul University', Icon: AcademicCapIcon },
+    {label: 'Nationality', text: 'Chinese', Icon: FlagIcon},
+    {label: 'Interests', text: '🥏Frisbee, 🥾Hiking', Icon: SparklesIcon},
+    {label: 'Study', text: 'DePaul University', Icon: AcademicCapIcon},
     // {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
   ],
 };
@@ -284,7 +284,8 @@ export const projects: ProjectItem[] = [
     description:
       'Award-winning DirectX 11 lighthouse scene developed for GAM470 at DePaul University. Features advanced rendering techniques including dynamic skybox, multiple light sources, realistic water effects, atmospheric fog, mirror reflections, and height-map terrain with texture interpolation.',
     githubUrl: 'https://github.com/tangzhilinnz/DX11-Learning-Framework',
-    liveUrl: 'https://www.linkedin.com/posts/tangzhilin_final-project-showcase-dx11-lighthouse-activity-7311612089268125697-0FYR',
+    liveUrl:
+      'https://www.linkedin.com/posts/tangzhilin_final-project-showcase-dx11-lighthouse-activity-7311612089268125697-0FYR',
     technologies: ['C++', 'DirectX 11', 'HLSL', 'Graphics Programming', 'Shader Development'],
     highlights: [
       'Implemented stunning water effects with realistic wave simulation (featured in future course curriculum)',
@@ -367,6 +368,6 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  { label: 'Github', Icon: GithubIcon, href: 'https://github.com/tangzhilinnz' },
-  { label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/tangzhilin/' },
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tangzhilinnz'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/tangzhilin/'},
 ];

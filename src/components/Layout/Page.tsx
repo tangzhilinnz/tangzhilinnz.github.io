@@ -1,8 +1,9 @@
 import {NextPage} from 'next';
+import siteUrl from 'next/config';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
 import {memo, PropsWithChildren} from 'react';
-import siteUrl from 'next/config';
+
 import {HomepageMeta} from '../../data/dataDef';
 
 const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, description}) => {

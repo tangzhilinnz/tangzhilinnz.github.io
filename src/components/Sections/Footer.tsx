@@ -1,7 +1,7 @@
-import { ChevronUpIcon } from '@heroicons/react/24/solid';
-import { FC, memo } from 'react';
+import {ChevronUpIcon} from '@heroicons/react/24/solid';
+import {FC, memo} from 'react';
 
-import { SectionId } from '../../data/data';
+import {SectionId} from '../../data/data';
 import Socials from '../Socials';
 
 const currentYear = new Date().getFullYear();
@@ -36,12 +36,8 @@ const Footer: FC = memo(() => (
 
         {/* Copyright & Credits */}
         <div className="flex flex-col items-center gap-y-2 text-center">
-          <p className="text-sm text-neutral-500">
-            © {currentYear} Zhilin Tang. All rights reserved.
-          </p>
-          <p className="text-xs text-neutral-600">
-            Built with React & Next.js • Deployed on GitHub Pages
-          </p>
+          <p className="text-sm text-neutral-500">© {currentYear} Zhilin Tang. All rights reserved.</p>
+          <p className="text-xs text-neutral-600">Built with React & Next.js • Deployed on GitHub Pages</p>
         </div>
       </div>
     </div>

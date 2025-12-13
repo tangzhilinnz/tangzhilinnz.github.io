@@ -1,10 +1,10 @@
-import { FC, memo } from 'react';
+import {FC, memo} from 'react';
 
-import { projects, SectionId, skills } from '../../../data/data';
+import {projects, SectionId, skills} from '../../../data/data';
 import Section from '../../Layout/Section';
 import ProjectCarousel from './ProjectCarousel';
 import ResumeSection from './ResumeSection';
-import { SkillGroup } from './Skills';
+import {SkillGroup} from './Skills';
 
 const Resume: FC = memo(() => {
   return (
