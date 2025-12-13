@@ -1,7 +1,7 @@
-import {StaticImageData} from 'next/image';
-import {FC, ForwardRefExoticComponent, SVGProps} from 'react';
+import { StaticImageData } from 'next/image';
+import { FC, ForwardRefExoticComponent, SVGProps } from 'react';
 
-import {IconProps} from '../components/Icon/Icon';
+import { IconProps } from '../components/Icon/Icon';
 
 export interface HomepageMeta {
   title: string;
@@ -91,6 +91,20 @@ export interface TimelineItem {
   location: string;
   title: string;
   content: JSX.Element;
+}
+
+/**
+ * Project section
+ */
+export interface ProjectItem {
+  title: string;
+  image: string | StaticImageData;
+  description: string;
+  githubUrl: string;
+  liveUrl?: string;
+  technologies: string[];
+  highlights: string[];
+  date?: string;
 }
 
 /**

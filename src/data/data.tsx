@@ -1,32 +1,22 @@
 import {
   AcademicCapIcon,
   ArrowDownTrayIcon,
-  BuildingOffice2Icon,
-  CalendarIcon,
+  // BuildingOffice2Icon,
+  // CalendarIcon,
   FlagIcon,
   MapIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
-import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.jpg';
-import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
-import porfolioImage2 from '../images/portfolio/portfolio-2.jpg'; // gif
-import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
-import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
-import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
-import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
-import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
-import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
+// Project images
+import mazeProjectImage from '../images/projects/maze_solver.gif';
+import lighthouseProjectImage from '../images/projects/dx11_lighthouse.gif';
+import openglProjectImage from '../images/projects/opengl_oit.jpg';
 import {
   About,
   ContactSection,
@@ -34,6 +24,7 @@ import {
   Hero,
   HomepageMeta,
   PortfolioItem,
+  ProjectItem,
   SkillGroup,
   Social,
   TestimonialSection,
@@ -56,6 +47,7 @@ export const SectionId = {
   About: 'about',
   Contact: 'contact',
   Portfolio: 'portfolio',
+  Projects: 'projects',
   Resume: 'resume',
   Skills: 'skills',
   Stats: 'stats',
@@ -120,11 +112,11 @@ export const aboutData: About = {
     </>
   ),
   aboutItems: [
-    {label: 'Location', text: 'Chicago, IL', Icon: MapIcon},
+    { label: 'Location', text: 'Chicago, IL', Icon: MapIcon },
     // {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Chinese', Icon: FlagIcon},
-    {label: 'Interests', text: '🥏Frisbee, 🥾Hiking', Icon: SparklesIcon},
-    {label: 'Study', text: 'DePaul University', Icon: AcademicCapIcon},
+    { label: 'Nationality', text: 'Chinese', Icon: FlagIcon },
+    { label: 'Interests', text: '🥏Frisbee, 🥾Hiking', Icon: SparklesIcon },
+    { label: 'Study', text: 'DePaul University', Icon: AcademicCapIcon },
     // {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
   ],
 };
@@ -200,78 +192,6 @@ export const skills: SkillGroup[] = [
 ];
 
 /**
- * Portfolio section
- */
-export const portfolioItems: PortfolioItem[] = [
-  {
-    title: 'OpenGL',
-    description: 'Learning framework',
-    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7286215957738401793/',
-    image: porfolioImage1,
-  },
-  {
-    title: 'DirectX 11',
-    description: 'shaders, graphics programming, and rendering techniques',
-    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7311612089268125697/',
-    image: porfolioImage2,
-  },
-  {
-    title: 'Project title 3',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage3,
-  },
-  {
-    title: 'Project title 4',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage4,
-  },
-  // {
-  //   title: 'Project title 5',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://reactresume.com',
-  //   image: porfolioImage5,
-  // },
-  // {
-  //   title: 'Project title 6',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://reactresume.com',
-  //   image: porfolioImage6,
-  // },
-  // {
-  //   title: 'Project title 7',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://reactresume.com',
-  //   image: porfolioImage7,
-  // },
-  // {
-  //   title: 'Project title 8',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://reactresume.com',
-  //   image: porfolioImage8,
-  // },
-  // {
-  //   title: 'Project title 9',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://reactresume.com',
-  //   image: porfolioImage9,
-  // },
-  // {
-  //   title: 'Project title 10',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://reactresume.com',
-  //   image: porfolioImage10,
-  // },
-  // {
-  //   title: 'Project title 11',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://reactresume.com',
-  //   image: porfolioImage11,
-  // },
-];
-
-/**
  * Resume section -- TODO: Standardize resume contact format or offer MDX
  */
 export const education: TimelineItem[] = [
@@ -340,6 +260,61 @@ export const experience: TimelineItem[] = [
 ];
 
 /**
+ * Project section
+ */
+export const projects: ProjectItem[] = [
+  {
+    title: 'High-Performance Multi-threaded Maze Solver',
+    image: mazeProjectImage,
+    description:
+      'Advanced C++17 maze solving algorithms optimized for high-end multicore CPUs (i9-14900KF). Features parallel pruning, bidirectional search, and collaborative DFS with intelligent thread synchronization for maximum throughput.',
+    githubUrl: 'https://github.com/tangzhilinnz/MULTI_CPP_MAZE',
+    liveUrl: 'https://tangzhilinnz.github.io/maze_visualization/',
+    technologies: ['C++17', 'Multithreading', 'Parallel Algorithms', 'Performance Optimization', 'CMake'],
+    highlights: [
+      'Implemented parallel pruning strategy with bidirectional search, dynamically reducing search space in real-time',
+      'Built collaborative bidirectional DFS with global state sharing to eliminate redundant work across threads',
+      'Optimized for i9-14900KF using C++17 multi-threading library, minimizing synchronization overhead',
+      'Achieved massive parallel throughput on server platforms while maintaining versatility for workstations',
+      'Created interactive visualization showing all algorithms in action with live performance comparison',
+    ],
+  },
+  {
+    title: 'DirectX 11 Lighthouse Scene',
+    image: lighthouseProjectImage,
+    description:
+      'Award-winning DirectX 11 lighthouse scene developed for GAM470 at DePaul University. Features advanced rendering techniques including dynamic skybox, multiple light sources, realistic water effects, atmospheric fog, mirror reflections, and height-map terrain with texture interpolation.',
+    githubUrl: 'https://github.com/tangzhilinnz/DX11-Learning-Framework',
+    liveUrl: 'https://www.linkedin.com/posts/tangzhilin_final-project-showcase-dx11-lighthouse-activity-7311612089268125697-0FYR',
+    technologies: ['C++', 'DirectX 11', 'HLSL', 'Graphics Programming', 'Shader Development'],
+    highlights: [
+      'Implemented stunning water effects with realistic wave simulation (featured in future course curriculum)',
+      'Developed dynamic skybox system with multiple light sources and atmospheric fog rendering',
+      'Created mirror reflections and realistic moving boat with physics-based animation',
+      'Built rugged height-map terrain with multi-texture interpolation for visual variety',
+      'Received high praise from instructor for advanced shader programming and rendering quality',
+    ],
+  },
+  {
+    title: 'OpenGL Learning Framework',
+    image: openglProjectImage,
+    description:
+      'A comprehensive learning framework advancing from beginner to mastery in OpenGL. Features implementation of advanced rendering techniques including Weighted Blended Order-Independent Transparency (OIT) and texture filtering optimizations, systematically organizing study materials and code for streamlined learning.',
+    githubUrl: 'https://github.com/tangzhilinnz/OpenGL_L',
+    liveUrl: 'https://www.linkedin.com/feed/update/urn:li:activity:7286215957738401793/',
+    technologies: ['C++', 'OpenGL', 'GLSL', 'Computer Graphics', 'CMake'],
+    highlights: [
+      'Implemented Weighted Blended OIT algorithm achieving smooth transparency in single render pass without depth sorting',
+      'Developed custom learning framework from scratch to systematically organize graphics programming concepts',
+      'Built anisotropic filtering demo showing significant visual quality improvements over trilinear filtering at oblique angles',
+      'Created interactive demos showcasing real-time transparency rendering with accurate color blending across multiple layers',
+      'Structured codebase enabling practical experimentation with advanced rendering techniques',
+    ],
+    date: '2024',
+  },
+];
+
+/**
  * Testimonial section
  */
 export const testimonial: TestimonialSection = {
@@ -393,9 +368,6 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  { label: 'Github', Icon: GithubIcon, href: 'https://github.com/tangzhilinnz' },
+  { label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/tangzhilin/' },
 ];

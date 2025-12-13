@@ -7,9 +7,11 @@
   },
   "scripts": {
     "build": "yarn compile && yarn next build",
-    "clean": "rm -rf build-tsc .next",
+    "clean": "rm -rf build-tsc .next out",
     "compile": "yarn run -T tsc --build --verbose",
     "dev": "yarn compile && yarn next dev",
+    "export": "yarn build && touch out/.nojekyll",
+    "deploy": "yarn export && git add -A && git commit -m 'Deploy to GitHub Pages' && git push",
     "lint": "yarn run -T prettier --write './src/**/*.{js,jsx,json,ts,tsx}' && eslint './src/**/*.{js,jsx,ts,tsx}' --fix --max-warnings=0",
     "start": "yarn next start",
     "sitemap": "yarn next-sitemap"
