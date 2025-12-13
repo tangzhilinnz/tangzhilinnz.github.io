@@ -23,7 +23,6 @@ import {
   ContactType,
   Hero,
   HomepageMeta,
-  PortfolioItem,
   ProjectItem,
   SkillGroup,
   Social,
