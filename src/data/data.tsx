@@ -98,10 +98,10 @@ export const aboutData: About = {
     <>
       {/* An alternative way to achieve the same result is by using the HTML entity &nbsp;, but using {' '} is often more convenient and common in JSX.  */}
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        With <strong className="text-stone-100">four years</strong> of experience in the parallel computing and AI
-        industry, I have developed a strong proficiency in <strong className="text-stone-100">C/C++</strong>, and{' '}
-        <strong className="text-stone-100">Python</strong> programming, focusing on designing, developing, testing, and
-        debugging high-quality software solutions.
+        With <strong className="text-stone-100">5 years</strong> of experience in the parallel computing and AI domains,
+        I specialize in crafting performance-driven applications within innovative tech environments.
+        <strong className="text-stone-100">C/C++</strong>, and <strong className="text-stone-100">Python</strong>{' '}
+        programming, focusing on designing, developing, testing, and debugging high-quality software solutions.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         In my free time time, you can catch me playing <strong className="text-stone-100">🥏 Frisbee</strong>,

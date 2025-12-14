@@ -83,8 +83,8 @@ const ProjectCarousel: FC<{projects: ProjectItem[]}> = memo(({projects}) => {
             key={`${project.title}-${index}`}
             style={{
               scrollSnapAlign: 'start',
-              width: 'calc(85% - 1rem)',
-              maxWidth: '650px',
+              width: 'calc(90% - 1rem)',
+              maxWidth: '900px',
             }}>
             <ProjectCard project={project} />
           </div>
