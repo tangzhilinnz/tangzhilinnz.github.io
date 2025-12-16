@@ -1,10 +1,10 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
-import { FC, memo, useEffect, useRef, useState } from 'react';
+import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/react/24/outline';
+import {FC, memo, useEffect, useRef, useState} from 'react';
 
-import { ProjectItem } from '../../../data/dataDef';
+import {ProjectItem} from '../../../data/dataDef';
 import ProjectCard from './ProjectCard';
 
-const ProjectCarousel: FC<{ projects: ProjectItem[] }> = memo(({ projects }) => {
+const ProjectCarousel: FC<{projects: ProjectItem[]}> = memo(({projects}) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
@@ -12,7 +12,7 @@ const ProjectCarousel: FC<{ projects: ProjectItem[] }> = memo(({ projects }) => 
 
   const handleScroll = () => {
     if (!scrollContainerRef.current) return;
-    const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+    const {scrollLeft, scrollWidth, clientWidth} = scrollContainerRef.current;
     const cardWidth = scrollContainerRef.current.children[0]?.clientWidth || 0;
     const newIndex = Math.round(scrollLeft / cardWidth);
 
@@ -96,8 +96,9 @@ const ProjectCarousel: FC<{ projects: ProjectItem[] }> = memo(({ projects }) => 
         {projects.map((_, index) => (
           <button
             aria-label={`Go to project ${index + 1}`}
-            className={`h-2 rounded-full transition-all ${index === currentIndex ? 'w-8 bg-orange-500' : 'w-2 bg-neutral-300 hover:bg-orange-400'
-              }`}
+            className={`h-2 rounded-full transition-all ${
+              index === currentIndex ? 'w-8 bg-orange-500' : 'w-2 bg-neutral-300 hover:bg-orange-400'
+            }`}
             key={index}
             onClick={() => scrollToIndex(index)}
             type="button"

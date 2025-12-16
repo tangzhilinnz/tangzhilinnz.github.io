@@ -93,25 +93,25 @@ export const aboutData: About = {
         <strong className="text-stone-100">DePaul University</strong> learning Real-Time Software and Game Systems.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        With <strong className="text-stone-100">5 years</strong> of experience in the parallel computing and <strong className="text-stone-100">AI</strong>{' '}
-        domains, I specialize in crafting performance-driven applications within innovative tech environments.
-        <strong className="text-stone-100">C/C++</strong>, and{' '}
-        <strong className="text-stone-100">Python</strong> programming, focusing on designing, developing, testing, and
-        debugging high-quality software solutions.
+        With <strong className="text-stone-100">5 years</strong> of experience in the parallel computing and{' '}
+        <strong className="text-stone-100">AI</strong> domains, I specialize in crafting performance-driven applications
+        within innovative tech environments.
+        <strong className="text-stone-100">C/C++</strong>, and <strong className="text-stone-100">Python</strong>{' '}
+        programming, focusing on designing, developing, testing, and debugging high-quality software solutions.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         In my free time time, you can catch me playing <strong className="text-stone-100">🥏 Frisbee</strong>,{' '}
-        <strong className="text-stone-100">🎱 Pool</strong>, <strong className="text-stone-100">🏓 Ping Pong</strong>, or exploring the beautiful{' '}
-        <strong className="text-stone-100">🏙️ Chicago</strong>.
+        <strong className="text-stone-100">🎱 Pool</strong>, <strong className="text-stone-100">🏓 Ping Pong</strong>,
+        or exploring the beautiful <strong className="text-stone-100">🏙️ Chicago</strong>.
       </p>
     </>
   ),
   aboutItems: [
-    { label: 'Location', text: 'Chicago, IL', Icon: MapIcon },
+    {label: 'Location', text: 'Chicago, IL', Icon: MapIcon},
     // {label: 'Age', text: '29', Icon: CalendarIcon},
-    { label: 'Nationality', text: 'Chinese', Icon: FlagIcon },
-    { label: 'Interests', text: '🥏Frisbee, 🥾Hiking', Icon: SparklesIcon },
-    { label: 'Study', text: 'DePaul University', Icon: AcademicCapIcon },
+    {label: 'Nationality', text: 'Chinese', Icon: FlagIcon},
+    {label: 'Interests', text: '🥏Frisbee, 🥾Hiking', Icon: SparklesIcon},
+    {label: 'Study', text: 'DePaul University', Icon: AcademicCapIcon},
     // {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
   ],
 };
@@ -294,7 +294,7 @@ export const projects: ProjectItem[] = [
     title: 'Real-Time Audio Engine with XAudio2',
     image: audioEngineProjectImage,
     description:
-      'Custom audio engine built with Microsoft\'s XAudio2 library, employing an actor-model multithreading architecture, command pattern, and circular queues for efficient real-time audio playback across multiple threads. Delivers a scalable, responsive, and data-driven audio solution for games and performance-critical applications.',
+      "Custom audio engine built with Microsoft's XAudio2 library, employing an actor-model multithreading architecture, command pattern, and circular queues for efficient real-time audio playback across multiple threads. Delivers a scalable, responsive, and data-driven audio solution for games and performance-critical applications.",
     githubUrl: '',
     liveUrl: 'https://www.youtube.com/watch?v=DwrrTVJwLvM',
     technologies: ['C++', 'XAudio2', 'Multithreading', 'Actor Model', 'Command Pattern', 'Circular Queues'],
@@ -397,6 +397,6 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  { label: 'Github', Icon: GithubIcon, href: 'https://github.com/tangzhilinnz' },
-  { label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/tangzhilin/' },
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tangzhilinnz'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/tangzhilin/'},
 ];
