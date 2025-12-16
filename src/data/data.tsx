@@ -3,7 +3,6 @@ import {
   ArrowDownTrayIcon,
   // BuildingOffice2Icon,
   // CalendarIcon,
-  FlagIcon,
   MapIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
@@ -109,7 +108,7 @@ export const aboutData: About = {
   aboutItems: [
     {label: 'Location', text: 'Chicago, IL', Icon: MapIcon},
     // {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Chinese', Icon: FlagIcon},
+    {label: 'Transcript', text: 'GPA 4.0/4.0', Icon: ArrowDownTrayIcon, href: '/assets/Unofficial_Transcript.pdf'},
     {label: 'Interests', text: '🥏Frisbee, 🥾Hiking', Icon: SparklesIcon},
     {label: 'Study', text: 'DePaul University', Icon: AcademicCapIcon},
     // {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
@@ -373,7 +372,7 @@ export const testimonial: TestimonialSection = {
 
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'Here is a good spot for a message to your readers to let them know how best to reach out to you.',
+  description: '',
   items: [
     {
       type: ContactType.Email,

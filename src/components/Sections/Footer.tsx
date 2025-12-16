@@ -23,7 +23,6 @@ const Footer: FC = memo(() => (
         {/* Name/Branding */}
         <div className="text-center">
           <h3 className="text-2xl font-bold text-white sm:text-3xl">Zhilin Tang</h3>
-          <p className="mt-2 text-sm text-neutral-400">Software Engineer | Graphics Programmer</p>
         </div>
 
         {/* Social Links */}

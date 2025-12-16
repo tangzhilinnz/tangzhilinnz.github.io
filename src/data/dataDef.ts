@@ -47,6 +47,7 @@ export interface AboutItem {
   label: string;
   text: string;
   Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
+  href?: string;
 }
 
 /**
@@ -91,6 +92,8 @@ export interface TimelineItem {
   location: string;
   title: string;
   content: JSX.Element;
+  gpa?: string;
+  transcriptUrl?: string;
 }
 
 /**
