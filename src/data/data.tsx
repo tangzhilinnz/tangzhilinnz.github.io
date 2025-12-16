@@ -12,10 +12,12 @@ import GithubIcon from '../components/Icon/GithubIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import heroImage from '../images/header-background.jpg';
 import profilepic from '../images/profilepic.jpg';
+import audioEngineProjectImage from '../images/projects/audio_engine.jpg';
 import lighthouseProjectImage from '../images/projects/dx11_lighthouse.gif';
 // Project images
 import mazeProjectImage from '../images/projects/maze_solver.gif';
 import openglProjectImage from '../images/projects/opengl_oit.jpg';
+import spaceInvadersProjectImage from '../images/projects/space_invaders.png';
 import testimonialImage from '../images/testimonial.webp';
 import {
   About,
@@ -60,23 +62,11 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Zhilin (Jason) Tang.`,
-  description: (
-    <>
-      <div className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Chicago based <strong className="text-stone-100">C++ Software Engineer</strong>, currently studying at{' '}
-        <strong className="text-stone-100">DePaul University</strong> learning Real-Time Software and Game Systems.
-      </div>
-      <div className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me playing <strong className="text-stone-100">🥏 Frisbee</strong>,
-        <strong className="text-stone-100">🎱 Pool</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Chicago</strong>.
-      </div>
-    </>
-  ),
+  name: `I'm Zhilin Tang.`,
+  description: <></>,
   actions: [
     {
-      href: '/assets/resume.pdf',
+      href: '/assets/Zhilin_Tang_Resume.pdf',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
@@ -98,24 +88,30 @@ export const aboutData: About = {
     <>
       {/* An alternative way to achieve the same result is by using the HTML entity &nbsp;, but using {' '} is often more convenient and common in JSX.  */}
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        With <strong className="text-stone-100">5 years</strong> of experience in the parallel computing and AI domains,
-        I specialize in crafting performance-driven applications within innovative tech environments.
-        <strong className="text-stone-100">C/C++</strong>, and <strong className="text-stone-100">Python</strong>{' '}
-        programming, focusing on designing, developing, testing, and debugging high-quality software solutions.
+        I'm a <strong className="text-stone-100">Chicago</strong> based{' '}
+        <strong className="text-stone-100">C++ Software Engineer</strong>, currently studying at{' '}
+        <strong className="text-stone-100">DePaul University</strong> learning Real-Time Software and Game Systems.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me playing <strong className="text-stone-100">🥏 Frisbee</strong>,
-        <strong className="text-stone-100">🎱 Pool</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Chicago</strong>.
+        With <strong className="text-stone-100">5 years</strong> of experience in the parallel computing and <strong className="text-stone-100">AI</strong>{' '}
+        domains, I specialize in crafting performance-driven applications within innovative tech environments.
+        <strong className="text-stone-100">C/C++</strong>, and{' '}
+        <strong className="text-stone-100">Python</strong> programming, focusing on designing, developing, testing, and
+        debugging high-quality software solutions.
+      </p>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
+        In my free time time, you can catch me playing <strong className="text-stone-100">🥏 Frisbee</strong>,{' '}
+        <strong className="text-stone-100">🎱 Pool</strong>, <strong className="text-stone-100">🏓 Ping Pong</strong>, or exploring the beautiful{' '}
+        <strong className="text-stone-100">🏙️ Chicago</strong>.
       </p>
     </>
   ),
   aboutItems: [
-    {label: 'Location', text: 'Chicago, IL', Icon: MapIcon},
+    { label: 'Location', text: 'Chicago, IL', Icon: MapIcon },
     // {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Chinese', Icon: FlagIcon},
-    {label: 'Interests', text: '🥏Frisbee, 🥾Hiking', Icon: SparklesIcon},
-    {label: 'Study', text: 'DePaul University', Icon: AcademicCapIcon},
+    { label: 'Nationality', text: 'Chinese', Icon: FlagIcon },
+    { label: 'Interests', text: '🥏Frisbee, 🥾Hiking', Icon: SparklesIcon },
+    { label: 'Study', text: 'DePaul University', Icon: AcademicCapIcon },
     // {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
   ],
 };
@@ -279,6 +275,39 @@ export const projects: ProjectItem[] = [
     ],
   },
   {
+    title: 'Space Invaders with 15 Design Patterns',
+    image: spaceInvadersProjectImage,
+    description:
+      'C# implementation of the classic arcade game Space Invaders using the AZUL framework. Showcases 15 software design patterns demonstrating modern software engineering principles including modular architecture, iterative development, and object-oriented design with well-structured game systems.',
+    githubUrl: 'https://github.com/tangzhilinnz/Space-Invaders',
+    liveUrl: '',
+    technologies: ['C#', 'AZUL Framework', 'Design Patterns', 'Game Development', 'OOP'],
+    highlights: [
+      'Integrated 15 design patterns: Singleton, Factory, Flyweight, Proxy, Adapter, Composite, Observer, Command, Iterator, State, Strategy, Visitor, Object Pool, Null Object, and Template',
+      'Faithful recreation of Space Invaders with all core gameplay mechanics and retro aesthetic',
+      'Built modular game systems for Input, Animation, Collision Detection, Sound, and Display',
+      'Demonstrated creational, structural, and behavioral pattern categories in a cohesive architecture',
+      'Designed for scalability and maintainability following SOLID principles and clean code practices',
+    ],
+  },
+  {
+    title: 'Real-Time Audio Engine with XAudio2',
+    image: audioEngineProjectImage,
+    description:
+      'Custom audio engine built with Microsoft\'s XAudio2 library, employing an actor-model multithreading architecture, command pattern, and circular queues for efficient real-time audio playback across multiple threads. Delivers a scalable, responsive, and data-driven audio solution for games and performance-critical applications.',
+    githubUrl: '',
+    liveUrl: 'https://www.youtube.com/watch?v=DwrrTVJwLvM',
+    technologies: ['C++', 'XAudio2', 'Multithreading', 'Actor Model', 'Command Pattern', 'Circular Queues'],
+    highlights: [
+      'Implemented asynchronous loading and caching of audio assets for optimal performance',
+      'Developed voice callback system for seamless stitching of multiple audio buffers',
+      'Built real-time volume and panning controls via dynamic play-time attributes',
+      'Designed handle-based resource access ensuring safe cross-thread management',
+      'Created priority-based playback control system to manage concurrent sound limits',
+      'Integrated custom user callbacks for triggering sounds and reporting playback events',
+    ],
+  },
+  {
     title: 'DirectX 11 Lighthouse Scene',
     image: lighthouseProjectImage,
     description:
@@ -368,6 +397,6 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tangzhilinnz'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/tangzhilin/'},
+  { label: 'Github', Icon: GithubIcon, href: 'https://github.com/tangzhilinnz' },
+  { label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/tangzhilin/' },
 ];

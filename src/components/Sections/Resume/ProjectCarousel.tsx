@@ -1,10 +1,10 @@
-import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/react/24/outline';
-import {FC, memo, useEffect, useRef, useState} from 'react';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { FC, memo, useEffect, useRef, useState } from 'react';
 
-import {ProjectItem} from '../../../data/dataDef';
+import { ProjectItem } from '../../../data/dataDef';
 import ProjectCard from './ProjectCard';
 
-const ProjectCarousel: FC<{projects: ProjectItem[]}> = memo(({projects}) => {
+const ProjectCarousel: FC<{ projects: ProjectItem[] }> = memo(({ projects }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
@@ -12,7 +12,7 @@ const ProjectCarousel: FC<{projects: ProjectItem[]}> = memo(({projects}) => {
 
   const handleScroll = () => {
     if (!scrollContainerRef.current) return;
-    const {scrollLeft, scrollWidth, clientWidth} = scrollContainerRef.current;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
     const cardWidth = scrollContainerRef.current.children[0]?.clientWidth || 0;
     const newIndex = Math.round(scrollLeft / cardWidth);
 
@@ -50,10 +50,10 @@ const ProjectCarousel: FC<{projects: ProjectItem[]}> = memo(({projects}) => {
       {showLeftArrow && (
         <button
           aria-label="Scroll left"
-          className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-xl transition-all hover:bg-orange-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/70 p-4 text-white shadow-2xl backdrop-blur-sm transition-all hover:bg-orange-500 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-orange-400"
           onClick={() => scroll('left')}
           type="button">
-          <ChevronLeftIcon className="h-6 w-6" />
+          <ChevronLeftIcon className="h-8 w-8 stroke-2" />
         </button>
       )}
 
@@ -61,10 +61,10 @@ const ProjectCarousel: FC<{projects: ProjectItem[]}> = memo(({projects}) => {
       {showRightArrow && (
         <button
           aria-label="Scroll right"
-          className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-3 shadow-xl transition-all hover:bg-orange-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/70 p-4 text-white shadow-2xl backdrop-blur-sm transition-all hover:bg-orange-500 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-orange-400"
           onClick={() => scroll('right')}
           type="button">
-          <ChevronRightIcon className="h-6 w-6" />
+          <ChevronRightIcon className="h-8 w-8 stroke-2" />
         </button>
       )}
 
@@ -96,9 +96,8 @@ const ProjectCarousel: FC<{projects: ProjectItem[]}> = memo(({projects}) => {
         {projects.map((_, index) => (
           <button
             aria-label={`Go to project ${index + 1}`}
-            className={`h-2 rounded-full transition-all ${
-              index === currentIndex ? 'w-8 bg-orange-500' : 'w-2 bg-neutral-300 hover:bg-orange-400'
-            }`}
+            className={`h-2 rounded-full transition-all ${index === currentIndex ? 'w-8 bg-orange-500' : 'w-2 bg-neutral-300 hover:bg-orange-400'
+              }`}
             key={index}
             onClick={() => scrollToIndex(index)}
             type="button"
