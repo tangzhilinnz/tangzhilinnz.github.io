@@ -376,8 +376,8 @@ export const contact: ContactSection = {
   items: [
     {
       type: ContactType.Email,
-      text: 'tangzhilinnz@gmail.com',
-      href: 'mailto:tangzhilinnz@gmail.com',
+      text: 'dGFuZ3poaWxpbm56QGdtYWlsLmNvbQ==', // Base64 encoded email
+      href: '', // Will be generated dynamically on client-side
     },
     {
       type: ContactType.Location,

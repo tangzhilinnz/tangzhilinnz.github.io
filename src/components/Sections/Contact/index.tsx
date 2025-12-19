@@ -1,6 +1,6 @@
 import {DevicePhoneMobileIcon, EnvelopeIcon, MapPinIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
-import {FC, memo} from 'react';
+import {FC, memo, useEffect, useState} from 'react';
 
 import {contact, SectionId} from '../../../data/data';
 import {ContactType, ContactValue} from '../../../data/dataDef';
@@ -24,6 +24,22 @@ const ContactValueMap: Record<ContactType, ContactValue> = {
 
 const Contact: FC = memo(() => {
   const {headerText, description, items} = contact;
+  const [decodedEmail, setDecodedEmail] = useState('');
+
+  useEffect(() => {
+    // Decode email on client-side only to prevent it from appearing in HTML source
+    const emailItem = items.find(item => item.type === ContactType.Email);
+    if (emailItem?.text) {
+      try {
+        const decoded = atob(emailItem.text);
+        setDecodedEmail(decoded);
+      } catch (e) {
+        // If not base64, use as-is (fallback for backward compatibility)
+        setDecodedEmail(emailItem.text);
+      }
+    }
+  }, [items]);
+
   return (
     <Section className="bg-neutral-800" sectionId={SectionId.Contact}>
       <div className="flex flex-col items-center gap-y-8">
@@ -38,13 +54,21 @@ const Contact: FC = memo(() => {
         <div className="grid w-full max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map(({type, text, href}) => {
             const {Icon, srLabel} = ContactValueMap[type];
+            // Use decoded email for display and href
+            const isEmail = type === ContactType.Email;
+            const displayText = isEmail && decodedEmail ? decodedEmail : text;
+            const actualHref = isEmail && decodedEmail ? `mailto:${decodedEmail}` : href;
+
             return (
               <a
                 className={classNames(
                   'group flex flex-col items-center gap-3 rounded-2xl bg-neutral-700 p-6 transition-all duration-300 hover:bg-neutral-600 hover:shadow-xl',
-                  {'cursor-pointer': href, 'cursor-default': !href},
+                  {
+                    'cursor-pointer': actualHref,
+                    'cursor-default': !actualHref,
+                  },
                 )}
-                href={href || undefined}
+                href={actualHref || undefined}
                 key={srLabel}
                 rel="noopener noreferrer"
                 target="_blank">
@@ -53,7 +77,9 @@ const Contact: FC = memo(() => {
                 </div>
                 <div className="flex flex-col items-center gap-1">
                   <dt className="text-xs font-medium uppercase tracking-wider text-neutral-400">{srLabel}</dt>
-                  <dd className="text-center text-sm font-medium text-white">{text}</dd>
+                  <dd className="text-center text-sm font-medium text-white">
+                    {isEmail && !decodedEmail ? 'Loading...' : displayText}
+                  </dd>
                 </div>
               </a>
             );
