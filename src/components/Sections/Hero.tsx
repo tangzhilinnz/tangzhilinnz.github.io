@@ -36,7 +36,16 @@ const Hero: FC = memo(() => {
                   )}
                   download={text === 'Resume' ? 'Zhilin_Tang_Resume.pdf' : undefined}
                   href={href}
-                  key={text}>
+                  key={text}
+                  onClick={() => {
+                    // Track Resume download with Google Analytics
+                    if (text === 'Resume' && typeof window !== 'undefined' && window.gtag) {
+                      window.gtag('event', 'download', {
+                        event_category: 'Resume',
+                        event_label: 'Hero Section',
+                      });
+                    }
+                  }}>
                   {text}
                   {Icon && <Icon className="h-5 w-5 text-white sm:h-6 sm:w-6" />}
                 </a>
