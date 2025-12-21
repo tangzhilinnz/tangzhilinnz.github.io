@@ -20,7 +20,7 @@ interface EventParams {
     value?: number;
 }
 
-export const event = ({ action, category, label, value }: EventParams) => {
+export const event = ({action, category, label, value}: EventParams) => {
     if (!window.gtag) return;
     window.gtag('event', action, {
         event_category: category,
